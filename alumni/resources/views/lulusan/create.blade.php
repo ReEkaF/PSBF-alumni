@@ -1,9 +1,3 @@
-<!-- @extends('layouts.app')
-
-@section('template_title')
-    {{ __('Create') }} Lulusan
-@endsection -->
-
 @extends('layouts.navbar')
 
 @section('content')
