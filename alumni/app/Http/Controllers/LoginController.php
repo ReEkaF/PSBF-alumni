@@ -7,6 +7,7 @@ use App\Models\Lulusan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\View\View;
 
 class LoginController extends Controller
 {
@@ -15,7 +16,7 @@ class LoginController extends Controller
         return view('login.index');
     }
 
-    public function postLogin(Request $request): RedirectResponse
+    public function postLogin(Request $request):  RedirectResponse
     {
         $credentials = $request->only('username', 'password');
         // dd(auth()->guard('web-admin')->attempt($credentials));
@@ -25,7 +26,11 @@ class LoginController extends Controller
             return redirect()->intended('admin/home');
         }elseif(auth()->guard('web-lulusan')->attempt($credentials)){
             $request->session()->regenerate();
-            return redirect()->intended('post');
+            // return redirect()->intended('profile')
+            // ->with('username',$credentials['username']);
+            // return view('profile', ['username'=>$credentials['username']]);        
+            // return redirect()->route('profile')->with('username',$credentials['username']);
+            return redirect()->route('profile', ['id' => $credentials['username']]);
         }else{
             return back()->withErrors([
             'username' => 'Login Gagal'

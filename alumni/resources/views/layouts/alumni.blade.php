@@ -18,7 +18,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </head>
 <body class="hold-transition layout-top-nav">
 <div class="wrapper">
-  @dd(auth()->guard('web-lulusan')->user())
+
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
     <div class="container">

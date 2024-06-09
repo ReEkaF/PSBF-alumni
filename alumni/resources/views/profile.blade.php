@@ -2,12 +2,6 @@
 
 @section('content')
 
-
-
-
-@dd(session());
-
-
     <div class="profile p-5 ">
         <div class="text_profile text-center mb-5">
             <h1 class="fs-1">Profile</h1>
@@ -18,15 +12,15 @@
         <div class="content bg-success mt-5">
             <div class="isi row px-5 d-flex">
                 <p class="col fs-3">Nim</p>
-                <p class="col fs-3">220411100113</p>
+                <p class="col fs-3">{{$lulusan->username}}</p>
             </div>
             <div class="isi row px-5 d-flex">
                 <p class="col fs-3">Nama</p>
-                <p class="col fs-3">Bapak Amba</p>
+                <p class="col fs-3">{{$lulusan->Nama}}</p>
             </div>
             <div class="isi row px-5 d-flex">
                 <p class="col fs-3">Tanggal Lahir</p>
-                <p class="col fs-3">18219821</p>
+                <p class="col fs-3">{{$lulusan->tanggal_lahir}}</p>
             </div>
             <div class="isi row px-5 d-flex">
                 <p class="col fs-3">Alamat</p>
@@ -67,7 +61,6 @@
             <div class="isi row px-5 d-flex">
                 <p class="col fs-3">pengalaman</p>
                 <p class="col fs-3">dwdwd</p>
-            </div>
         </div>
     </div>
 

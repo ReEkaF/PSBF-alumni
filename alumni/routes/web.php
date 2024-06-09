@@ -15,7 +15,7 @@ use App\Http\Controllers\PekerjaanController;
 use App\Http\Controllers\PostinganController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AdminController;
-
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Session;
 Route::get('/', function () {
     if ( ! empty(Session::get('role')) ) {
@@ -34,9 +34,7 @@ Route::get('/', function () {
 });
 
 // Auth::routes();
-Route::get('/profile', function () {
-    return view('profile');
-});
+Route::get('/profile/{id}', [ProfileController::class, 'index'] )->name('profile');
 Route::get('/search', function () {
     return view('search');
 });
