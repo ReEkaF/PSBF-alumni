@@ -22,7 +22,7 @@ class LulusanRequest extends FormRequest
     public function rules(): array
     {
         return [
-			'nim' => 'required|string',
+			'username' => 'required|string',
 			'Nama' => 'required|string',
 			'tanggal_lahir' => 'required',
 			'Alamat' => 'required|string',

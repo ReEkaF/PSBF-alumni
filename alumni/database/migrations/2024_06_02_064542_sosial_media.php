@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create("sosial_media", function (Blueprint $table){
             $table->id("id_sosmed")->primary();
-            $table->string("nim",12);
+            $table->string("username",12);
             $table->string("nama_akun_sosmed");
             $table->string("jenis_sosmed");
-            $table->foreign("nim")->references("nim")->on("lulusan")->constrained();
+            $table->foreign("username")->references("username")->on("lulusan")->constrained();
 
         });
     }

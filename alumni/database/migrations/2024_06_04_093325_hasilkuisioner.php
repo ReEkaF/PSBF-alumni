@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create("hasil_kuisioner", function (Blueprint $table){
             $table->id('id_hasil_kuisioner');
-            $table->string('nim',12);
+            $table->string('username',12);
             $table->unsignedBigInteger('id_kuisioner');
             $table->string('hasil_kuisioner1')->nullable();
             $table->string('hasil_kuisioner2')->nullable();
@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('hasil_kuisioner9')->nullable();
             $table->string('hasil_kuisioner10')->nullable();
 
-            $table->foreign("nim")->references("nim")->on("lulusan")->constrained();
+            $table->foreign("username")->references("username")->on("lulusan")->constrained();
             $table->foreign("id_kuisioner")->references("id_kuisioner")->on("kuisioner")->constrained();
         });
     }

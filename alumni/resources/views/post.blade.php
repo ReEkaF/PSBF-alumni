@@ -1,6 +1,7 @@
 @extends('layouts.alumni')
 
 @section('content')
+
 <div class="post-container">
     <div class="post border border-5 border-primary">
         <div class="head p-5 d-flex border-bottom border-5 border-primary">

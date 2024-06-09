@@ -74,11 +74,4 @@ class LulusanController extends Controller
             ->with('success', 'Lulusan updated successfully');
     }
 
-    public function destroy($id): RedirectResponse
-    {
-        Lulusan::find($id)->delete();
-
-        return Redirect::route('lulusan.index')
-            ->with('success', 'Lulusan deleted successfully');
-    }
 }

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create("pekerjaan",function(Blueprint $table){
             $table->id("id_pekerjaan")->primary();
-            $table->string("nim",12);
+            $table->string("username",12);
             $table->string("perusahaan")->nullable();
             $table->string("nama_pekerjaan")->nullable();
             $table->string("alamat_perusahaan")->nullable();
@@ -21,7 +21,7 @@ return new class extends Migration
             $table->date("mulai_bekerja");
             $table->date("selesai_bekeja");
 
-            $table->foreign("nim")->references("nim")->on("lulusan")->constrained();
+            $table->foreign("username")->references("username")->on("lulusan")->constrained();
 
         });
     }

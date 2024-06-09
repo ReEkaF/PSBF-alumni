@@ -40,12 +40,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <li class="nav-item">
             <a href="search" class="nav-link">Search</a>
           </li>
-          <li class="nav-item">
-            <a href="profile" class="nav-link">profile</a>
-          </li>
-          <li class="nav-item">
-            <a href="kuisioner" class="nav-link">kuisioner</a>
-          </li>
+          @if ((auth()->guard('web-lulusan')))
+            <li class="nav-item">
+              <a href="profile" class="nav-link">profile</a>
+            </li>
+            <li class="nav-item">
+              <a href="kuisioner" class="nav-link">kuisioner</a>
+            </li>
+          @endif
               <!-- End Level two -->
             </ul>
           </li>
@@ -54,9 +56,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
       <!-- Right navbar links -->
       <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
-        <li class=" btn btn-primary bg-success px-5">
-            <a href="login">login</a>
+        @if ((auth()->guard('web-lulusan')))
+          <li class=" btn btn-danger bg-danger px-5">
+            <a href="{{route('login')}}">logout</a>
         </li>
+        
+        
+        @endif
+        @if (!(auth()->guard('web-lulusan')))
+        <li class=" btn btn-primary bg-success px-5">
+            <a href="{{route('login')}}">login</a>
+        </li>
+        @endif
+        
       </ul>
     </div>
   </nav>
@@ -100,7 +112,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="../../dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="../../dist/js/demo.js"></script>
+<!-- AdminLTE for demo purposes
+<script src="../../dist/js/demo.js"></script> -->
 </body>
 </html>

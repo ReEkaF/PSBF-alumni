@@ -3,11 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 /**
  * Class Lulusan
  *
- * @property $nim
+ * @property $username
  * @property $Nama
  * @property $tanggal_lahir
  * @property $Alamat
@@ -27,11 +28,11 @@ use Illuminate\Database\Eloquent\Model;
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
-class Lulusan extends Model
+class Lulusan extends Authenticatable
 {
     
     protected $perPage = 20;
-    protected $primaryKey='nim';
+    protected $primaryKey='username';
     protected $table = 'lulusan';
 
     public $timestamps = false;
@@ -41,7 +42,7 @@ class Lulusan extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['nim','password', 'Nama', 'tanggal_lahir', 'alamat', 'jenis_kelamin', 'ipk', 'tahun_masuk', 'tahun_lulus', 'prodi', 'no_hp', 'email'];
+    protected $fillable = ['username','password', 'Nama', 'tanggal_lahir', 'alamat', 'jenis_kelamin', 'ipk', 'tahun_masuk', 'tahun_lulus', 'prodi', 'no_hp', 'email'];
 
 
     /**
@@ -49,7 +50,7 @@ class Lulusan extends Model
      */
     public function pekerjaan()
     {
-        return $this->hasMany(\App\Models\Pekerjaan::class, 'nim', 'nim');
+        return $this->hasMany(\App\Models\Pekerjaan::class, 'username', 'username');
     }
     
     /**
@@ -57,7 +58,7 @@ class Lulusan extends Model
      */
     public function postingan()
     {
-        return $this->hasMany(\App\Models\Postingan::class, 'nim', 'nim');
+        return $this->hasMany(\App\Models\Postingan::class, 'username', 'username');
     }
     
     /**
@@ -65,7 +66,7 @@ class Lulusan extends Model
      */
     public function sosialMedia()
     {
-        return $this->hasMany(\App\Models\SosialMedia::class, 'nim', 'nim');
+        return $this->hasMany(\App\Models\SosialMedia::class, 'username', 'username');
     }
     
 }

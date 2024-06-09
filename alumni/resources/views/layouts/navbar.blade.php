@@ -182,7 +182,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="lulusan" class="nav-link">
+            <a href="/lulusan" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Alumni
@@ -190,7 +190,7 @@
             </a>
           </li>        
           <li class="nav-item">
-            <a href="postingan" class="nav-link">
+            <a href="/postingan" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>
                 postingan
@@ -207,7 +207,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="kuisioner/" class="nav-link">
+                <a href="/kuisioner" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Kuisioner</p>
                 </a>
@@ -273,7 +273,7 @@
 <script src="../../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
 <script src="../../dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="../../dist/js/demo.js"></script>
+<!-- AdminLTE for demo purposes
+<script src="../../dist/js/demo.js"></script> -->
 </body>
 </html>

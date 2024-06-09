@@ -1,6 +1,13 @@
 @extends('layouts.alumni')
 
 @section('content')
+
+
+
+
+@dd(session());
+
+
     <div class="profile p-5 ">
         <div class="text_profile text-center mb-5">
             <h1 class="fs-1">Profile</h1>

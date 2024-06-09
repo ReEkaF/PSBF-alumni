@@ -43,13 +43,13 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
         ]);
         Admin::create([
-            "username"=>"000000000000",
-            "password"=>"test",
+            "username"=>"a",
+            "password"=>"1",
             "nama"=>"admin"
             ]);
         Lulusan::create([
-            "nim"=>"220411100113",
-            "password"=>"testtt",
+            "username"=>"tt",
+            "password"=>"gd",
             "nama"=>"andre",
             "tanggal_lahir"=>"2003-07-15",
             "alamat"=>'tuban',
