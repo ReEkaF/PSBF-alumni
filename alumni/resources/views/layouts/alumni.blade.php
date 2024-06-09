@@ -18,7 +18,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </head>
 <body class="hold-transition layout-top-nav">
 <div class="wrapper">
-
+  @dd(auth()->guard('web-lulusan')->user())
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
     <div class="container">
@@ -40,7 +40,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <li class="nav-item">
             <a href="search" class="nav-link">Search</a>
           </li>
-          @if ((auth()->guard('web-lulusan')))
+          @if (auth()->guard('web-lulusan')->user())
             <li class="nav-item">
               <a href="profile" class="nav-link">profile</a>
             </li>
@@ -56,14 +56,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
       <!-- Right navbar links -->
       <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
-        @if ((auth()->guard('web-lulusan')))
-          <li class=" btn btn-danger bg-danger px-5">
-            <a href="{{route('login')}}">logout</a>
+        @if (auth()->guard('web-lulusan')->user())
+        <form action="{{route('logout')}}" method="post">
+          @csrf
+        <li class=" btn btn-danger bg-danger px-5">
+            <button type="submit">logout</button>
+            
         </li>
-        
-        
+        </form>
+
         @endif
-        @if (!(auth()->guard('web-lulusan')))
+        @if (!auth()->guard('web-lulusan')->user())
         <li class=" btn btn-primary bg-success px-5">
             <a href="{{route('login')}}">login</a>
         </li>

@@ -47,7 +47,7 @@ Route::group(['prefix' => 'login'], function () {
     Route::get('', [LoginController::class, 'index'] )->name('login');
     Route::post('/check', [LoginController::class, 'postLogin'])->name('login.check');
 });
-Route::get('/logout', [LoginController::class, 'getLogout'])->name('logout');
+Route::post('/logout', [LoginController::class, 'getLogout'])->name('logout');
 
 Route::group(['middleware' => 'admin'], function () {
     Route::group(['prefix' => 'admin'], function () {
