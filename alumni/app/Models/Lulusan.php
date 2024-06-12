@@ -34,6 +34,9 @@ class Lulusan extends Authenticatable
     protected $perPage = 20;
     protected $primaryKey='username';
     protected $table = 'lulusan';
+    protected $casts = [
+        'password' => 'hashed',
+    ];
 
     public $timestamps = false;
 

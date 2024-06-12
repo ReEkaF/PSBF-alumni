@@ -15,17 +15,7 @@ return new class extends Migration
             $table->id('id_hasil_kuisioner');
             $table->string('username',12);
             $table->unsignedBigInteger('id_kuisioner');
-            $table->string('hasil_kuisioner1')->nullable();
-            $table->string('hasil_kuisioner2')->nullable();
-            $table->string('hasil_kuisioner3')->nullable();
-            $table->string('hasil_kuisioner4')->nullable();
-            $table->string('hasil_kuisioner5')->nullable();
-            $table->string('hasil_kuisioner6')->nullable();
-            $table->string('hasil_kuisioner7')->nullable();
-            $table->string('hasil_kuisioner8')->nullable();
-            $table->string('hasil_kuisioner9')->nullable();
-            $table->string('hasil_kuisioner10')->nullable();
-
+            $table->string('hasil_kuisioner')->nullable();
             $table->foreign("username")->references("username")->on("lulusan")->constrained();
             $table->foreign("id_kuisioner")->references("id_kuisioner")->on("kuisioner")->constrained();
         });

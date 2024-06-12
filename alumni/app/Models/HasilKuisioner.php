@@ -30,13 +30,17 @@ class HasilKuisioner extends Model
 {
     
     protected $perPage = 20;
+    protected $primaryKey='id_hasil_kuisioner';
 
+    protected $table = 'hasil_kuisioner';
+
+    public $timestamps = false;
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
-    protected $fillable = ['id_hasil_kuisioner', 'nim', 'id_kuisioner', 'hasil_kuisioner1', 'hasil_kuisioner2', 'hasil_kuisioner3', 'hasil_kuisioner4', 'hasil_kuisioner5', 'hasil_kuisioner6', 'hasil_kuisioner7', 'hasil_kuisioner8', 'hasil_kuisioner9', 'hasil_kuisioner10'];
+    protected $fillable = ['id_hasil_kuisioner', 'username', 'id_kuisioner', 'hasil_kuisioner',];
 
 
     /**

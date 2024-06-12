@@ -12,7 +12,7 @@
         <div class="content bg-success mt-5">
             <div class="isi row px-5 d-flex">
                 <p class="col fs-3">Nim</p>
-                <p class="col fs-3">{{$lulusan->username}}</p>
+                <p class="col fs-3">{{$username}}</p>
             </div>
             <div class="isi row px-5 d-flex">
                 <p class="col fs-3">Nama</p>
@@ -24,53 +24,39 @@
             </div>
             <div class="isi row px-5 d-flex">
                 <p class="col fs-3">Alamat</p>
-                <p class="col fs-3">dmlwdlw</p>
+                <p class="col fs-3">{{$lulusan->alamat}}</p>
             </div>
             <div class="isi row px-5 d-flex">
                 <p class="col fs-3">jenis_kelamin</p>
-                <p class="col fs-3">dmlwdlw</p>
-            </div>
-            <div class="isi row px-5 d-flex">
-                <p class="col fs-3">ipk</p>
-                <p class="col fs-3">4</p>
+                <p class="col fs-3">
+                @if ($lulusan->jenis_kelamin==1)
+                    laki-laki
+                @else
+                    perempuan
+                @endif    
+               </p>
             </div>
             <div class="isi row px-5 d-flex">
                 <p class="col fs-3">no hp</p>
-                <p class="col fs-3">21212lw</p>
+                <p class="col fs-3">{{$lulusan->no_hp}}</p>
             </div>
             <div class="isi row px-5 d-flex">
                 <p class="col fs-3">email</p>
-                <p class="col fs-3">dwdwd</p>
+                <p class="col fs-3">{{$lulusan->email}}</p>
             </div>
             <div class="isi row px-5 d-flex">
                 <p class="col fs-3">prodi</p>
-                <p class="col fs-3">dadadawdwx</p>
+                <p class="col fs-3">{{$lulusan->prodi}}</p>
             </div>
             <div class="isi row px-5 d-flex">
                 <p class="col fs-3">tahun_masuk</p>
-                <p class="col fs-3">2222</p>
+                <p class="col fs-3">{{$lulusan->tahun_masuk}}</p>
             </div>
             <div class="isi row px-5 d-flex">
                 <p class="col fs-3">tahun_lulus</p>
-                <p class="col fs-3">3131</p>
+                <p class="col fs-3">{{$lulusan->tahun_lulus}}</p>
             </div>
-            <div class="isi row px-5 d-flex">
-                <p class="col fs-3">prestasi</p>
-                <p class="col fs-3">dwdwd</p>
-            </div>
-            <div class="isi row px-5 d-flex">
-                <p class="col fs-3">pengalaman</p>
-                <p class="col fs-3">dwdwd</p>
         </div>
     </div>
-
-<!-- <div class="container d-flex justify-content-center align-items-center vh-100">
-    <div class="profile p-5 text-center">
-        <h1 class="fs-1">Profile</h1>
-        <div class="cont_img h-25 w-25 mx-auto">
-            <img src="https://www.freeiconspng.com/uploads/profile-icon-9.png" alt="" class="h-100 w-100">
-        </div>
-    </div>
-</div> -->
 
 @endsection

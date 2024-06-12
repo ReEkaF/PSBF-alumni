@@ -35,17 +35,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Left navbar links -->
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a href="post" class="nav-link">Home</a>
+            <a href="/" class="nav-link">Home</a>
           </li>
           <li class="nav-item">
-            <a href="search" class="nav-link">Search</a>
+            <a href="/search" class="nav-link">Search</a>
           </li>
           @if (auth()->guard('web-lulusan')->user())
             <li class="nav-item">
-              <a href="profile" class="nav-link">profile</a>
+              <a href="/profile" class="nav-link">profile</a>
             </li>
             <li class="nav-item">
-              <a href="kuisioner" class="nav-link">kuisioner</a>
+              <a href="/main_kuisioner" class="nav-link">kuisioner</a>
             </li>
           @endif
               <!-- End Level two -->

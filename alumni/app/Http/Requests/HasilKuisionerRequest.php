@@ -22,19 +22,9 @@ class HasilKuisionerRequest extends FormRequest
     public function rules(): array
     {
         return [
-			'id_hasil_kuisioner' => 'required',
-			'nim' => 'required|string',
+			'username' => 'required|string',
 			'id_kuisioner' => 'required',
-			'hasil_kuisioner1' => 'string',
-			'hasil_kuisioner2' => 'string',
-			'hasil_kuisioner3' => 'string',
-			'hasil_kuisioner4' => 'string',
-			'hasil_kuisioner5' => 'string',
-			'hasil_kuisioner6' => 'string',
-			'hasil_kuisioner7' => 'string',
-			'hasil_kuisioner8' => 'string',
-			'hasil_kuisioner9' => 'string',
-			'hasil_kuisioner10' => 'string',
+			'hasil_kuisioner' => 'string',
         ];
     }
 }

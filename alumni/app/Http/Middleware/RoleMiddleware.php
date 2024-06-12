@@ -18,7 +18,7 @@ class RoleMiddleware
         if (!auth()->guard('web-admin')->user()) {
             return redirect()->guest('/');
         }elseif(!auth()->guard('web-lulusan')->user()){
-
+            return redirect()->guest('/');
         }
         return $next($request);
     }

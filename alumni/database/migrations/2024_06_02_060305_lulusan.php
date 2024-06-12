@@ -13,12 +13,11 @@ return new class extends Migration
     {
         Schema::create("lulusan", function (Blueprint $table){
             $table->string("username",12)->primary();
-            $table->string("password",12);
+            $table->string("password");
             $table->string("Nama");
             $table->date("tanggal_lahir");
             $table->string("alamat");
             $table->boolean("jenis_kelamin");
-            $table->float("ipk");
             $table->year("tahun_masuk");
             $table->year("tahun_lulus");
             $table->string("prodi");

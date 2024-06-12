@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
  * Class Postingan
  *
  * @property $id_postingan
- * @property $nim
+ * @property $username
  * @property $judul
  * @property $tanggal_posting
  * @property $gambar
@@ -22,13 +22,16 @@ class Postingan extends Model
 {
     
     protected $perPage = 20;
+    protected $primaryKey='id_postingan';
+    protected $table = 'postingan';
+    public $timestamps = false;
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
-    protected $fillable = ['id_postingan', 'nim', 'judul', 'tanggal_posting', 'gambar', 'deskripsi'];
+    protected $fillable = ['username', 'judul', 'tanggal_posting', 'gambar', 'deskripsi'];
 
 
     /**
@@ -36,7 +39,7 @@ class Postingan extends Model
      */
     public function lulusan()
     {
-        return $this->belongsTo(\App\Models\Lulusan::class, 'nim', 'nim');
+        return $this->belongsTo(\App\Models\Lulusan::class, 'username', 'username');
     }
     
 }

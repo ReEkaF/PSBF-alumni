@@ -10,10 +10,12 @@ use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
-    public function index($id): View
+    public function index():View
     {
-        $lulusan = Lulusan::find($id);
-        return view('profile', compact('lulusan'));
+        $username = session('username');
+        $lulusan = Lulusan::find($username);
+
+        return view('profile', compact('lulusan', 'username'));
     }
 
 }

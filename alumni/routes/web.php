@@ -15,6 +15,7 @@ use App\Http\Controllers\PekerjaanController;
 use App\Http\Controllers\PostinganController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PengisianController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Session;
 Route::get('/', function () {
@@ -32,15 +33,23 @@ Route::get('/', function () {
 Route::get('/', function () {
     return view('post');
 });
-
+Route::get('/post', function () {
+    return view('postcreate');
+});
+Route::post('/post/postcreate', [PostinganController::class,'store'])->name('postcreate');
 // Auth::routes();
-Route::get('/profile/{id}', [ProfileController::class, 'index'] )->name('profile');
+// Route::get('/profile/{id}', [ProfileController::class, 'index'] )->name('profile');
+Route::get('/profile', [ProfileController::class, 'index'] )->name('profile');
 Route::get('/search', function () {
     return view('search');
 });
-Route::get('/post', function () {
-    return view('post');
-});
+// Route::group(['prefix' => 'post'], function () {
+//     Route::get('/', [PostinganController::class, 'index'] )->name('post');
+//     Route::get('/post/postcreate', [PostinganController::class, 'show'])->name('postcreate');
+// });
+
+
+
 Route::group(['prefix' => 'login'], function () {
     Route::get('', [LoginController::class, 'index'] )->name('login');
     Route::post('/check', [LoginController::class, 'postLogin'])->name('login.check');
@@ -55,9 +64,14 @@ Route::group(['middleware' => 'admin'], function () {
 Route::group(['middleware' => 'lulusan'], function () {
     Route::resource('lulusan', LulusanController::class);
 });
+Route::group(['prefik'=>'kuisioner'],function () {
+    Route::get('/main_kuisioner',[PengisianController::class,'main_kuisioner'])->name('main_kuisioner');
+});
+Route::get('/kuisioner',[PengisianController::class,'index'])->name('kuisioner');
+Route::post('/kuisioner/masukan',[PengisianController::class, 'masukan'])->name('masukan');;
 // Route::resource('lulusan', LulusanController::class);
 // Route::resource('sosial-media', SosialMediaController::class);
 // Route::resource('pekerjaans', PekerjaanController::class);
-// Route::resource('postingans', PostinganController::class);
+
 // Route::resource('kuisioner', KuisionerController::class);
 // Route::resource('hasil-kuisioners', HasilKuisionerController::class);

@@ -16,10 +16,10 @@ class PostinganController extends Controller
      */
     public function index(Request $request): View
     {
-        $postingans = Postingan::paginate();
+        $postingan = Postingan::paginate();
 
-        return view('postingan.index', compact('postingans'))
-            ->with('i', ($request->input('page', 1) - 1) * $postingans->perPage());
+        return view('postingan.index', compact('postingan'))
+            ->with('i', ($request->input('page', 1) - 1) * $postingan->perPage());
     }
 
     /**
@@ -28,21 +28,28 @@ class PostinganController extends Controller
     public function create(): View
     {
         $postingan = new Postingan();
-
         return view('postingan.create', compact('postingan'));
     }
-
+    
     /**
      * Store a newly created resource in storage.
      */
     public function store(PostinganRequest $request): RedirectResponse
     {
-        Postingan::create($request->validated());
+        $validatedData = $request->validated();
 
-        return Redirect::route('postingans.index')
+        // Periksa apakah ada file gambar yang diunggah
+        if ($request->file("gambar")) {
+            $validatedData["gambar"] = $request->file("gambar")->store("postingan-img");
+        }
+ 
+        // Simpan data ke dalam tabel 'postingan'
+        Postingan::create($validatedData);
+
+        // Redirect ke halaman index dengan pesan sukses
+        return Redirect::route('post')
             ->with('success', 'Postingan created successfully.');
     }
-
     /**
      * Display the specified resource.
      */
@@ -70,7 +77,7 @@ class PostinganController extends Controller
     {
         $postingan->update($request->validated());
 
-        return Redirect::route('postingans.index')
+        return Redirect::route('postingan.index')
             ->with('success', 'Postingan updated successfully');
     }
 
@@ -78,7 +85,7 @@ class PostinganController extends Controller
     {
         Postingan::find($id)->delete();
 
-        return Redirect::route('postingans.index')
+        return Redirect::route('postingan.index')
             ->with('success', 'Postingan deleted successfully');
     }
 }

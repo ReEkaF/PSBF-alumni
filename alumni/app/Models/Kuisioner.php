@@ -37,7 +37,7 @@ class Kuisioner extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['id_kuisioner', 'kuisioner1', 'kuisioner2', 'kuisioner3', 'kuisioner4', 'kuisioner5', 'kuisioner6', 'kuisioner7', 'kuisioner8', 'kuisioner9', 'kuisioner10'];
+    protected $fillable = ['kuisioner'];
 
 
     /**

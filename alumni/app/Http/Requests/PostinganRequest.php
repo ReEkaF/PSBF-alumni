@@ -22,11 +22,10 @@ class PostinganRequest extends FormRequest
     public function rules(): array
     {
         return [
-			'id_postingan' => 'required',
-			'nim' => 'required|string',
+			'username' => 'string',
 			'judul' => 'string',
 			'tanggal_posting' => 'required',
-			'gambar' => 'string',
+			'gambar' => 'image',
 			'deskripsi' => 'string',
         ];
     }

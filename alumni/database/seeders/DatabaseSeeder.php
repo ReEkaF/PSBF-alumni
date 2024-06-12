@@ -25,7 +25,10 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use App\Models\Admin;
+use App\Models\Kuisioner;
 use App\Models\Lulusan;
+use App\Models\MainKuisioner;
+
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -44,12 +47,12 @@ class DatabaseSeeder extends Seeder
         ]);
         Admin::create([
             "username"=>"a",
-            "password"=>"1",
+            "password"=>"a",
             "nama"=>"admin"
             ]);
         Lulusan::create([
             "username"=>"tt",
-            "password"=>"gd",
+            "password"=>"a",
             "nama"=>"andre",
             "tanggal_lahir"=>"2003-07-15",
             "alamat"=>'tuban',
@@ -61,5 +64,17 @@ class DatabaseSeeder extends Seeder
             "no_hp" =>"089515896944",
             "email"=>"andreka852@gmail.com"
         ]);
+        MainKuisioner::create([
+            "subject"=>"text"
+        ]);
+        Kuisioner::create([
+            "id_main_kuisioner"=>1,
+            "kuisioner"=>"test"
+        ]);
+        Kuisioner::create([
+            "id_main_kuisioner"=>1,
+            "kuisioner"=>"test2"
+        ]);
+        
     }
 }
